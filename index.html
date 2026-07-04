@@ -7,21 +7,49 @@
         justify-content: center;
         align-items: center;
       }
+      .clock {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     </style>
   </head>
-  <body style="background-color: #03000D; color: azure;">
-    <h1>Welcome to Xyper OS!</h1>
-    <div class="container">
-      <img style="width: 128px; height: 64px" src="jpg.jpg" />
+  <body style="background-color: #03000D; color: azure; background-image: url(berlin.jpg); background-size: cover; background-repeat: no-repeat; font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;">
+    <div style="background-color: #03000D; width: fit-content; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 8px; border: solid; border-radius: 16px; margin-top: 50px;">
+      <h1>Welcome to Xyper OS!</h1>
+      <div class="container">
+        <img style="width: 128px; height: 64px" src="jpg.jpg" />
+      </div>
+      <h3>Here are some useful websites to help you get started.</h3>
+      <a href="https://wiki.archlinux.org">Goated Wiki</a>
+      <h5>i use arch btw</h5>
+      <a href="https://wiki.hypr.land">Goated Wiki, The Sequel.</a>
+      <br>
+      <h1>Now, why is this important?</h1>
+      <h3>It's quite simple, actually. This is why:</h3>
+      <img style="width: 512px; height: 412px; border-radius: 20px;" src="penguin.jpg" />
     </div>
-    <h3>Here are some useful websites to help you get started.</h3>
-    <a href="https://wiki.archlinux.org">Goated Wiki</a>
-    <h5>i use arch btw</h5>
-    <a href="https://wiki.hypr.land">Goated Wiki, The Sequel.</a>
-    <br>
-    <h1>Now, why is this important?</h1>
-    <h3>It's quite simple, actually. This is why:</h3>
-    <img style="width: 512px; height: 412px" src="penguin.jpg" />
+    <div style="display: flex; justify-content: space-between; background-color: rgba(3, 0, 13, 0); width: 100%; border-radius: 16px;">
+      <p style="margin-left: 8px; background-color: #03000D; padding: 16px; border-radius: 16px;">
+        XyperOS
+      </p>
+      <div class="clock">
+        <p id="tidElement" style="background-color: #03000D; padding: 16px; border-radius: 16px;">
+          Time rn
+        </p>
+      </div>
+      <p style="margin-right: 8px; background-color: #03000D; padding: 16px; border-radius: 16px;">
+        68% Depleting
+      </p>
+    </div>
+    <script>
+      function uppdateraTid() {
+        var currentTime = new Date().toLocaleString();
+        var tidText = document.querySelector("#tidElement");
+        tidText.innerHTML = currentTime;
+      }
+      setInterval(uppdateraTid, 1000)
+    </script>
   </body>
 
 </html>
